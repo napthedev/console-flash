@@ -29,38 +29,6 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
-    "languages": [
-      {
-        "id": "javascript",
-        "aliases": [
-          "JavaScript",
-          "javascript",
-          "js",
-          "Javascriptreact",
-          "javascriptreact",
-          "jsx"
-        ],
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      },
-      {
-        "id": "typescript",
-        "aliases": [
-          "TypeScript",
-          "typescript",
-          "ts",
-          "Typescriptreact",
-          "typescriptreact",
-          "tsx"
-        ],
-        "extensions": [
-          ".ts",
-          ".tsx"
-        ]
-      }
-    ],
     "commands": [
       {
         "command": "flash.log",
