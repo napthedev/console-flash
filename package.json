@@ -38,8 +38,8 @@
     "keybindings": [
       {
         "command": "flash.log",
-        "key": "alt+l",
-        "mac": "alt+l",
+        "key": "ctrl+shift+l",
+        "mac": "cmd+shift+l",
         "when": "editorTextFocus"
       }
     ]

@@ -6,8 +6,8 @@
 
 ## Usage
 
-- Windows: `Alt + L`
-- Mac: `Option + L`
+- Windows: `Control + Shift + L`
+- Mac: `Command + Shift + L`
 
 ## Demo
 
