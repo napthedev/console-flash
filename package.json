@@ -2,7 +2,7 @@
   "name": "console-flash",
   "displayName": "Console Flash",
   "description": "Quickly add console.log using keybinding",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.61.0"
   },
