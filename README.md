@@ -11,7 +11,7 @@
 
 ## Demo
 
-![Preview](https://res.cloudinary.com/naptest/image/upload/v1634893590/console-flash_mxxig4.gif)
+![Preview](https://res.cloudinary.com/naptest/image/upload/v1634908225/console_lr53wn.gif)
 
 ## Explain
 
