@@ -1,0 +1,106 @@
+{
+  "name": "console-flash",
+  "displayName": "Console Flash",
+  "description": "Quickly add console.log using keybinding",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.61.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "logo.png",
+  "publisher": "NAPTheDevHcj",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/napthedev/console-flash.git"
+  },
+  "keywords": [
+    "console",
+    "log",
+    "flash",
+    "javascript",
+    "napthedevhcj",
+    "console-flash",
+    "console.log"
+  ],
+  "activationEvents": [
+    "onCommand:flash.log"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "javascript",
+        "aliases": [
+          "JavaScript",
+          "javascript",
+          "js",
+          "Javascriptreact",
+          "javascriptreact",
+          "jsx"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      },
+      {
+        "id": "typescript",
+        "aliases": [
+          "TypeScript",
+          "typescript",
+          "ts",
+          "Typescriptreact",
+          "typescriptreact",
+          "tsx"
+        ],
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "flash.log",
+        "title": "Console Flash"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "flash.log",
+        "key": "alt+l",
+        "mac": "alt+l",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p -w . --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.61.0",
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.1",
+    "typescript": "^4.4.3",
+    "ts-loader": "^9.2.5",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
+    "@vscode/test-electron": "^1.6.2"
+  }
+}
