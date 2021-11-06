@@ -42,6 +42,23 @@
         "mac": "cmd+shift+l",
         "when": "editorTextFocus"
       }
+    ],
+    "configuration": [
+      {
+        "title": "Console Flash",
+        "properties": {
+          "console-flash.double-quotes": {
+            "type": "boolean",
+            "default": true,
+            "description": "Use double quote or single quote in console.log"
+          },
+          "console-flash.semi-colon": {
+            "type": "boolean",
+            "default": true,
+            "description": "Use semi colon in the end of console.log"
+          }
+        }
+      }
     ]
   },
   "scripts": {

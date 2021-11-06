@@ -18,6 +18,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     if (!editor) return;
 
+    const quote = vscode.workspace.getConfiguration("console-flash").get("double-quotes") ? '"' : "'";
+    const semiColon = vscode.workspace.getConfiguration("console-flash").get("semi-colon") ? ";" : "";
+
     if (editor.selection.isEmpty) {
       const position = editor.selection.active;
 
@@ -41,7 +44,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       if (!valid.includes(currentLine[index])) {
         editor.edit((editBuilder) => {
-          editBuilder.insert(editor.selection.active, `console.log();`);
+          editBuilder.insert(editor.selection.active, `console.log()${semiColon}`);
         });
       } else {
         const left = findNext(currentLine.slice(0, index), "", index - 1, -1)
@@ -52,7 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
         const result = `${left}${currentLine[index]}${right}`;
 
         editor.edit((editBuilder) => {
-          editBuilder.insert(editor.selection.active, `console.log("${result}: ", ${result});`);
+          editBuilder.insert(editor.selection.active, `console.log(${quote}${result}: ${quote}, ${result})${semiColon}`);
         });
       }
     } else {
@@ -61,7 +64,7 @@ export function activate(context: vscode.ExtensionContext) {
       await vscode.commands.executeCommand("editor.action.insertLineAfter");
 
       editor.edit((editBuilder) => {
-        editBuilder.insert(editor.selection.active, `console.log("${text}: ", ${text});`);
+        editBuilder.insert(editor.selection.active, `console.log(${quote}${text}: ${quote}, ${text})${semiColon}`);
       });
     }
   });
